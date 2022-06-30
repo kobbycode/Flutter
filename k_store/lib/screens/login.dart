@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:k_store/pallet.dart';
+import 'package:k_store/screens/logout.dart';
 
 import '../widgets/background_image.dart';
 import '../widgets/input_email.dart';
@@ -89,7 +90,9 @@ class Login extends StatelessWidget {
                               padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                               child: Container(
                                 child: FlatButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/SignUp');
+                                  },
                                   child: Text(
                                     'Create an Account',
                                     style: BodyText,

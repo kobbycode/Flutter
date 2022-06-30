@@ -113,7 +113,9 @@ class SignUp extends StatelessWidget {
                             style: BodyText,
                           ),
                           FlatButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/Login');
+                            },
                             child: Text(
                               'Login',
                               style: BodyText,

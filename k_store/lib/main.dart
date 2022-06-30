@@ -12,10 +12,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'K-STORE',
-      home: Login(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const WelcomPage(),
+        '/Login': (context) => const Login(),
+        '/SignUp': (context) => const SignUp(),
+      },
+      // home: WelcomPage(),
     );
   }
 }

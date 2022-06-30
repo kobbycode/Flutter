@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:k_store/pallet.dart';
 import 'package:k_store/widgets/rounded_button.dart';
@@ -46,11 +48,24 @@ class _WelcomPageState extends State<WelcomPage> {
                       height: 600,
                     ),
                     // ignore: avoid_unnecessary_containers
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 40),
-                      // ignore: avoid_unnecessary_containers
-                      child: Container(
-                        child: const RoundedButton(buttonText: 'Get Started'),
+                    Container(
+                      // This allows the button to take the whole width
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 93, 12, 107),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: FlatButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/Login');
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 15),
+                          child: Text(
+                            'Get Started',
+                            style: BodyText,
+                          ),
+                        ),
                       ),
                     ),
                   ],
