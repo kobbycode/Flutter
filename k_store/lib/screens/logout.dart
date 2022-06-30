@@ -97,7 +97,7 @@ class SignUp extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 55),
+                        padding: const EdgeInsets.symmetric(horizontal: 40),
                         child: Container(
                           child: RoundedButton(buttonText: 'Register'),
                         ),
