@@ -63,10 +63,13 @@ class Login extends StatelessWidget {
                               hint: 'Password',
                               inputAction: TextInputAction.done,
                             ),
-                            Text(
-                              'Forgot Password?',
-                              style: BodyText,
-                            )
+                            FlatButton(
+                              onPressed: () {},
+                              child: Text(
+                                'Forgot Password?',
+                                style: BodyText,
+                              ),
+                            ),
                           ],
                         ),
 
