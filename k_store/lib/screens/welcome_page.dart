@@ -45,27 +45,27 @@ class _WelcomPageState extends State<WelcomPage> {
                       ),
                     ),
                     const SizedBox(
-                      height: 600,
+                      height: 500,
                     ),
-                    // ignore: avoid_unnecessary_containers
-                    Container(
-                      // This allows the button to take the whole width
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 93, 12, 107),
-                        borderRadius: BorderRadius.circular(16),
+                    RaisedButton(
+                      padding: const EdgeInsets.only(
+                        left: 100,
+                        top: 20,
+                        bottom: 20,
+                        right: 100,
                       ),
-                      child: FlatButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/Login');
-                        },
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 15),
-                          child: Text(
-                            'Get Started',
-                            style: BodyText,
-                          ),
+                      color: const Color.fromARGB(255, 108, 19, 124),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20.0),
                         ),
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/Login');
+                      },
+                      child: const Text(
+                        'Get Started',
+                        style: BodyText,
                       ),
                     ),
                   ],

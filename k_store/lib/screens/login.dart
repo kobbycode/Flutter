@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:k_store/pallet.dart';
-import 'package:k_store/screens/logout.dart';
 
 import '../widgets/background_image.dart';
 import '../widgets/input_email.dart';
@@ -40,7 +39,7 @@ class Login extends StatelessWidget {
                   ),
 
                   SizedBox(
-                    height: 120,
+                    height: 90,
                   ),
 
                   // Input Fields
