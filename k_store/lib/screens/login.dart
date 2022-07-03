@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:k_store/pallet.dart';
+import 'package:k_store/screens/logout.dart';
 
 import '../widgets/background_image.dart';
 import '../widgets/input_email.dart';
@@ -81,6 +82,7 @@ class Login extends StatelessWidget {
                             ),
                             RoundedButton(
                               buttonText: 'Login',
+                              onPressed: () {},
                             ),
                             SizedBox(
                               height: 75,
@@ -90,7 +92,29 @@ class Login extends StatelessWidget {
                               child: Container(
                                 child: FlatButton(
                                   onPressed: () {
-                                    Navigator.pushNamed(context, '/SignUp');
+                                    Navigator.push(
+                                        context,
+                                        PageRouteBuilder(
+                                          transitionDuration:
+                                              const Duration(seconds: 1),
+                                          transitionsBuilder: (context,
+                                              animation, animationTime, child) {
+                                            // Animation Curve
+                                            animation = CurvedAnimation(
+                                              parent: animation,
+                                              curve: Curves.elasticInOut,
+                                            );
+                                            return ScaleTransition(
+                                              alignment: Alignment.center,
+                                              scale: animation,
+                                              child: child,
+                                            );
+                                          },
+                                          pageBuilder: (context, animation,
+                                              animationTime) {
+                                            return const SignUp();
+                                          },
+                                        ));
                                   },
                                   child: Text(
                                     'Create an Account',

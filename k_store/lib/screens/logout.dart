@@ -7,6 +7,8 @@ import 'package:k_store/widgets/passwor_input.dart';
 import 'package:k_store/widgets/rounded_button.dart';
 import 'package:k_store/widgets/widgets.dart';
 
+import 'login.dart';
+
 class SignUp extends StatelessWidget {
   const SignUp({Key? key}) : super(key: key);
 
@@ -99,7 +101,10 @@ class SignUp extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 40),
                         child: Container(
-                          child: RoundedButton(buttonText: 'Register'),
+                          child: RoundedButton(
+                            buttonText: 'Register',
+                            onPressed: () {},
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -114,7 +119,29 @@ class SignUp extends StatelessWidget {
                           ),
                           FlatButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, '/Login');
+                              Navigator.push(
+                                  context,
+                                  PageRouteBuilder(
+                                    transitionDuration:
+                                        const Duration(seconds: 1),
+                                    transitionsBuilder: (context, animation,
+                                        animationTime, child) {
+                                      // Animation Curve
+                                      animation = CurvedAnimation(
+                                        parent: animation,
+                                        curve: Curves.elasticInOut,
+                                      );
+                                      return ScaleTransition(
+                                        alignment: Alignment.center,
+                                        scale: animation,
+                                        child: child,
+                                      );
+                                    },
+                                    pageBuilder:
+                                        (context, animation, animationTime) {
+                                      return const Login();
+                                    },
+                                  ));
                             },
                             child: Text(
                               'Login',
