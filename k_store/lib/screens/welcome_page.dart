@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:k_store/pallet.dart';
+import 'package:k_store/screens/login.dart';
 import 'package:k_store/widgets/rounded_button.dart';
 
 class WelcomPage extends StatefulWidget {
@@ -61,7 +62,28 @@ class _WelcomPageState extends State<WelcomPage> {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/Login');
+                        // Animation for Transition
+                        Navigator.push(
+                            context,
+                            PageRouteBuilder(
+                              transitionDuration: const Duration(seconds: 1),
+                              transitionsBuilder:
+                                  (context, animation, animationTime, child) {
+                                // Animation Curve
+                                animation = CurvedAnimation(
+                                  parent: animation,
+                                  curve: Curves.elasticInOut,
+                                );
+                                return ScaleTransition(
+                                  alignment: Alignment.center,
+                                  scale: animation,
+                                  child: child,
+                                );
+                              },
+                              pageBuilder: (context, animation, animationTime) {
+                                return const Login();
+                              },
+                            ));
                       },
                       child: const Text(
                         'Get Started',
