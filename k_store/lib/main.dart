@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:k_store/screens/login.dart';
-import 'package:k_store/screens/logout.dart';
 import 'package:k_store/screens/welcome_page.dart';
 
 void main() {

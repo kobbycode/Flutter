@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:k_store/pallet.dart';
 import 'package:k_store/screens/login.dart';
-import 'package:k_store/widgets/rounded_button.dart';
 
 class WelcomPage extends StatefulWidget {
   const WelcomPage({Key? key}) : super(key: key);
