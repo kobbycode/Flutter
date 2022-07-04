@@ -29,6 +29,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.2.4
+flutter_native_splash:
+  image: assets/icons/icon.png
+  color: '##ffffff'
   flutter_launcher_icons: '^0.9.2'
 
 flutter_icons:
